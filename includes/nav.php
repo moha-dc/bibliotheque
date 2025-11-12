@@ -19,7 +19,7 @@
                             </li>
 
                             <!-- Liens visibles uniquement pour les administrateurs connectés -->
-                            <?php if (isset($_SESSION['admin_id']) || isset($_SESSION['abonne_id'])): ?>
+                            <?php if (isset($_SESSION['admin_id']) ): ?>
                                   <li>
                                         <a href="/bibliotheque/admin/dashboard.php" class="hover:text-blue-200 transition font-medium">
                                               Tableau de bord
@@ -40,6 +40,18 @@
                                         </span>
                                   </li>
                                   <li>
+                                        <!-- Bouton de déconnexion -->
+                                        <a href="/bibliotheque/logout.php" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition font-medium">
+                                              Déconnexion
+                                        </a>
+                                  </li>
+                                <?php elseif (isset($_SESSION['abonne_id'])): ?>
+                                    <li>
+                                        <a href="/bibliotheque/espace_abonne.php" class="hover:text-blue-200 transition font-medium">
+                                              Espace abonné
+                                        </a>
+                                  </li>
+                                    <li>
                                         <!-- Bouton de déconnexion -->
                                         <a href="/bibliotheque/logout.php" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition font-medium">
                                               Déconnexion
